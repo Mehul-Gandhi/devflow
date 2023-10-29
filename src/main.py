@@ -90,7 +90,6 @@ code_snippets = parse_repository(local_dir)
 # Store embeddings in Milvus
 store_embeddings_in_milvus(code_snippets)
 
-
 # vector_store = SupabaseVectorStore(
 #     supabase, 
 #     embeddings, 
