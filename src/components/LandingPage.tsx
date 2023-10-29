@@ -1,13 +1,21 @@
 import React, { useState } from 'react';
-import { Button, TextField, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
+import { Button, TextField, FormControl, InputLabel, Select, MenuItem, InputAdornment  } from '@mui/material';
+import { Radio, RadioGroup, FormControlLabel } from '@mui/material';
+
+import styles from "./styles/LandingPage.module.css";
+
 const LandingPage: React.FC = () => {
     const [gitHubLink, setGitHubLink] = useState<string>('');
     const [mode, setMode] = useState<string>('question');
     const [prompt, setPrompt] = useState<string>('');
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '40px' }}>
-            <h1>Welcome to DevFlow</h1>
+<div style={{ 
+    display: 'flex', 
+    flexDirection: 'column', 
+    alignItems: 'center', 
+    padding: '40px', 
+}}>          <h1>Welcome to DevFlow</h1>
             <p>
                 Empowering new engineers with the tools and insights to understand the codebase faster than ever. Dive deep, ask questions, visualize structures - all in one place.
             </p>
@@ -23,21 +31,27 @@ const LandingPage: React.FC = () => {
                 autoFocus
                 value={gitHubLink}
                 onChange={(e) => setGitHubLink(e.target.value)}
+                placeholder="https://github.com/pioneers/shepherd"
+
             />
 
-            <FormControl variant="outlined" margin="normal" fullWidth>
-                <InputLabel id="mode-label">Mode</InputLabel>
-                <Select
-                    labelId="mode-label"
-                    id="mode-select"
-                    value={mode}
-                    onChange={(e) => setMode(e.target.value as string)}
-                    label="Mode"
-                >
-                    <MenuItem value="question">Question</MenuItem>
-                    <MenuItem value="flowchart">Flowchart</MenuItem>
-                </Select>
-            </FormControl>
+<RadioGroup 
+    row 
+    value={mode} 
+    onChange={(e) => setMode(e.target.value)}>
+    <FormControlLabel 
+        value="question" 
+        control={<Radio color="primary" />} 
+        label="Question" 
+    />
+    <FormControlLabel 
+        value="flowchart" 
+        control={<Radio color="primary" />} 
+        label="Flowchart" 
+    />
+</RadioGroup>
+
+
 
             <TextField
                 variant="outlined"
@@ -45,27 +59,22 @@ const LandingPage: React.FC = () => {
                 required
                 fullWidth
                 id="prompt"
-                label={mode === 'question' ? 'Ask a Question' : 'Describe the Flowchart'}
+                label={mode === 'question' ? 'Ask a Question' : 'Describe the Desired Flowchart'}
                 name="prompt"
                 value={prompt}
                 onChange={(e) => setPrompt(e.target.value)}
             />
-
+            
             <Button
                 variant="contained"
                 color="primary"
                 style={{ marginTop: '20px' }}
                 onClick={() => {
-                    if (mode === 'question') {
-                        // Handle question mode
-                    } else {
-                        // Handle flowchart mode
-                    }
+                    // Handle the action here
                 }}
             >
-                {mode === 'question' ? 'Ask Question' : 'Display Flowchart'}
+                Submit
             </Button>
-
             
         </div>
     );
