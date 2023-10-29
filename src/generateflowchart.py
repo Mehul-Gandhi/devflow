@@ -15,7 +15,10 @@ def get_flowchart_data_from_code(code):
     You are Codebase AI. Your task is to convert the following code into a structured breakdown suitable for generating a flowchart:
 
     The flowchart's format is supposed to follow the format that is possible for future pipelining:
-    
+    Mermaid flowchart text form of the flowchart.
+
+    example is here:
+
 
     {code}
 
@@ -23,6 +26,7 @@ def get_flowchart_data_from_code(code):
     """
     
     # Initialize the ChatOpenAI model
+    # replace with an open source LLM 
     chat = ChatOpenAI(streaming=True, temperature=0.5)
     
     # Create the prompt template

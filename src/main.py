@@ -42,6 +42,7 @@ if not utility.has_collection(collection_name):
 
 embeddings = OpenAIEmbeddings()
 
+# Clone the repository to the Milvus vector database
 def clone_repository(github_link, local_dir):
     """Clone a GitHub repository to a local directory."""
     git.Repo.clone_from(github_link, local_dir)
@@ -62,24 +63,8 @@ def store_embeddings_in_milvus(code_snippets):
         embedding = embeddings.embed(code)
         collection.insert([embedding])
 
-# Assuming you have a function to convert codebase to embeddings and store in Milvus
-# This function will replace the SupabaseVectorStore in your original code
-def store_embeddings_in_milvus(codebase):
-    # Convert codebase to embeddings
-    embedding = embeddings.embed(codebase)
-    # Store embeddings in Milvus
-    collection.insert([embedding])
-
-
-# Assuming you have a function to convert codebase to embeddings and store in Milvus
-# This function will replace the SupabaseVectorStore in your original code
-def store_embeddings_in_milvus(codebase):
-    # Convert codebase to embeddings
-    embedding = embeddings.embed(codebase)
-    # Store embeddings in Milvus
-    collection.insert([embedding])
-
 # Clone the repository
+# Cloned to the database
 github_link = os.environ.get("GITHUB_LINK")
 local_dir = "cloned_repo"
 clone_repository(github_link, local_dir)
