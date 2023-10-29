@@ -1,0 +1,78 @@
+
+  /* Material UI overrides (if needed) */
+  .MuiButton-outlined {
+    border-color: #1976d2; /* Adjust as needed */
+    color: #1976d2; /* Adjust as needed */
+  }
+  
+  .MuiButton-root:hover {
+    background-color: rgba(25, 118, 210, 0.04); /* Adjust as needed */
+  }
+  
+/* styles/NotFound.css */
+/* styles/NotFound.css */
+
+.container {
+
+    background: linear-gradient(to bottom, #2f3136, #1e2125);
+    color: #c9d1d9;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    
+    /* Flexbox properties to center content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.display-1 {
+    font-size: 3.5rem; /* reduced font size */
+    margin-bottom: 15px;
+}
+
+b {
+    font-size: 1.2rem; /* reduced font size */
+    margin-bottom: 10px;
+    display: block;
+}
+
+p.lead, p {
+    font-size: 0.9rem; /* reduced font size */
+    margin-bottom: 10px;
+}
+
+a {
+    color: #58a6ff;
+}
+
+a:hover {
+    color: #0366d6;
+    text-decoration: underline;
+}
+
+button {
+    background-color: #238636; 
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem; /* reduced font size */
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #1f6f2c;
+}
+
+img {
+    border-radius: 6px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+}
+
+.list-unstyled li {
+    font-size: 0.85rem; /* reduced font size */
+    margin-bottom: 8px;
+}
